@@ -1,0 +1,713 @@
+{
+  "$type": "UAssetAPI.PropertyTypes.Structs.StructPropertyData, UAssetAPI",
+  "StructType": "PlayerPlaneDataTable",
+  "SerializeNone": true,
+  "StructGUID": "{00000000-0000-0000-0000-000000000000}",
+  "Name": "Row_103",
+  "DuplicationIndex": 0,
+  "IsZero": false,
+  "Value": [
+    {
+      "$type": "UAssetAPI.PropertyTypes.Objects.IntPropertyData, UAssetAPI",
+      "Name": "PlaneID",
+      "DuplicationIndex": 0,
+      "IsZero": false,
+      "Value": 103
+    },
+    {
+      "$type": "UAssetAPI.PropertyTypes.Objects.IntPropertyData, UAssetAPI",
+      "Name": "OriginalPlaneID",
+      "DuplicationIndex": 0,
+      "IsZero": false,
+      "Value": -1
+    },
+    {
+      "$type": "UAssetAPI.PropertyTypes.Objects.StrPropertyData, UAssetAPI",
+      "Name": "PlaneStringID",
+      "DuplicationIndex": 0,
+      "IsZero": false,
+      "Value": "f18f"
+    },
+    {
+      "$type": "UAssetAPI.PropertyTypes.Objects.EnumPropertyData, UAssetAPI",
+      "EnumType": "EPlaneTargetMode",
+      "InnerType": null,
+      "Name": "TargetMode",
+      "DuplicationIndex": 0,
+      "IsZero": false,
+      "Value": "EPlaneTargetMode::CampaignAndOnline"
+    },
+    {
+      "$type": "UAssetAPI.PropertyTypes.Objects.SoftObjectPropertyData, UAssetAPI",
+      "Name": "Reference",
+      "DuplicationIndex": 0,
+      "IsZero": false,
+      "Value": {
+        "$type": "UAssetAPI.PropertyTypes.Objects.FSoftObjectPath, UAssetAPI",
+        "AssetPath": {
+          "$type": "UAssetAPI.PropertyTypes.Objects.FTopLevelAssetPath, UAssetAPI",
+          "PackageName": null,
+          "AssetName": "/Game/Blueprint/Player/Pawn/AcePlayerPawn_f18f.AcePlayerPawn_f18f_C"
+        },
+        "SubPathString": null
+      }
+    },
+    {
+      "$type": "UAssetAPI.PropertyTypes.Objects.EnumPropertyData, UAssetAPI",
+      "EnumType": "EPlaneCategory",
+      "InnerType": null,
+      "Name": "Category",
+      "DuplicationIndex": 0,
+      "IsZero": false,
+      "Value": "EPlaneCategory::Multirole"
+    },
+    {
+      "$type": "UAssetAPI.PropertyTypes.Objects.EnumPropertyData, UAssetAPI",
+      "EnumType": "EPlaneHangarSize",
+      "InnerType": null,
+      "Name": "HangarSize",
+      "DuplicationIndex": 0,
+      "IsZero": false,
+      "Value": "EPlaneHangarSize::PHS_Medium"
+    },
+    {
+      "$type": "UAssetAPI.PropertyTypes.Objects.EnumPropertyData, UAssetAPI",
+      "EnumType": "EPlaneIGCSize",
+      "InnerType": null,
+      "Name": "IGCSize",
+      "DuplicationIndex": 0,
+      "IsZero": false,
+      "Value": "EPlaneIGCSize::PIS_Medium"
+    },
+    {
+      "$type": "UAssetAPI.PropertyTypes.Objects.EnumPropertyData, UAssetAPI",
+      "EnumType": "EGunCaliber",
+      "InnerType": null,
+      "Name": "GunCaliber",
+      "DuplicationIndex": 0,
+      "IsZero": false,
+      "Value": "EGunCaliber::GunCaliber20mm"
+    },
+    {
+      "$type": "UAssetAPI.PropertyTypes.Objects.IntPropertyData, UAssetAPI",
+      "Name": "GunLoadCount",
+      "DuplicationIndex": 0,
+      "IsZero": false,
+      "Value": 2400
+    },
+    {
+      "$type": "UAssetAPI.PropertyTypes.Objects.IntPropertyData, UAssetAPI",
+      "Name": "MainWeaponLoadCount",
+      "DuplicationIndex": 0,
+      "IsZero": false,
+      "Value": 98
+    },
+    {
+      "$type": "UAssetAPI.PropertyTypes.Objects.StrPropertyData, UAssetAPI",
+      "Name": "SpWeaponID1",
+      "DuplicationIndex": 0,
+      "IsZero": false,
+      "Value": "qaam"
+    },
+    {
+      "$type": "UAssetAPI.PropertyTypes.Objects.IntPropertyData, UAssetAPI",
+      "Name": "SpWeaponLoadCount1",
+      "DuplicationIndex": 0,
+      "IsZero": false,
+      "Value": 10
+    },
+    {
+      "$type": "UAssetAPI.PropertyTypes.Objects.StrPropertyData, UAssetAPI",
+      "Name": "SpWeaponID2",
+      "DuplicationIndex": 0,
+      "IsZero": false,
+      "Value": "lasm"
+    },
+    {
+      "$type": "UAssetAPI.PropertyTypes.Objects.IntPropertyData, UAssetAPI",
+      "Name": "SpWeaponLoadCount2",
+      "DuplicationIndex": 0,
+      "IsZero": false,
+      "Value": 16
+    },
+    {
+      "$type": "UAssetAPI.PropertyTypes.Objects.StrPropertyData, UAssetAPI",
+      "Name": "SpWeaponID3",
+      "DuplicationIndex": 0,
+      "IsZero": false,
+      "Value": "eml"
+    },
+    {
+      "$type": "UAssetAPI.PropertyTypes.Objects.IntPropertyData, UAssetAPI",
+      "Name": "SpWeaponLoadCount3",
+      "DuplicationIndex": 0,
+      "IsZero": false,
+      "Value": 22
+    },
+    {
+      "$type": "UAssetAPI.PropertyTypes.Objects.IntPropertyData, UAssetAPI",
+      "Name": "FlareLoadCount",
+      "DuplicationIndex": 0,
+      "IsZero": false,
+      "Value": 4
+    },
+    {
+      "$type": "UAssetAPI.PropertyTypes.Objects.FloatPropertyData, UAssetAPI",
+      "Value": 1000.0,
+      "Name": "FlareEffectiveRange_MP",
+      "DuplicationIndex": 0,
+      "IsZero": false
+    },
+    {
+      "$type": "UAssetAPI.PropertyTypes.Structs.StructPropertyData, UAssetAPI",
+      "StructType": "SoftObjectPath",
+      "SerializeNone": true,
+      "StructGUID": "{00000000-0000-0000-0000-000000000000}",
+      "Name": "HangarAcquireCamera",
+      "DuplicationIndex": 0,
+      "IsZero": false,
+      "Value": [
+        {
+          "$type": "UAssetAPI.PropertyTypes.Structs.SoftObjectPathPropertyData, UAssetAPI",
+          "Path": null,
+          "Name": "HangarAcquireCamera",
+          "DuplicationIndex": 0,
+          "IsZero": false,
+          "Value": {
+            "$type": "UAssetAPI.PropertyTypes.Objects.FSoftObjectPath, UAssetAPI",
+            "AssetPath": {
+              "$type": "UAssetAPI.PropertyTypes.Objects.FTopLevelAssetPath, UAssetAPI",
+              "PackageName": null,
+              "AssetName": "/Game/Blueprint/Hangar/Camera/Acquired/PlaneAcquiredCamera_f18f.PlaneAcquiredCamera_f18f"
+            },
+            "SubPathString": null
+          }
+        }
+      ]
+    },
+    {
+      "$type": "UAssetAPI.PropertyTypes.Objects.IntPropertyData, UAssetAPI",
+      "Name": "SortNumber",
+      "DuplicationIndex": 0,
+      "IsZero": false,
+      "Value": 11
+    },
+    {
+      "$type": "UAssetAPI.PropertyTypes.Objects.IntPropertyData, UAssetAPI",
+      "Name": "AlphabeticalSortNumber",
+      "DuplicationIndex": 0,
+      "IsZero": false,
+      "Value": 142
+    },
+    {
+      "$type": "UAssetAPI.PropertyTypes.Objects.BytePropertyData, UAssetAPI",
+      "ByteType": "Byte",
+      "EnumType": "None",
+      "Value": 50,
+      "Name": "GraphAirToAir",
+      "DuplicationIndex": 0,
+      "IsZero": false
+    },
+    {
+      "$type": "UAssetAPI.PropertyTypes.Objects.BytePropertyData, UAssetAPI",
+      "ByteType": "Byte",
+      "EnumType": "None",
+      "Value": 36,
+      "Name": "GraphAirToGround",
+      "DuplicationIndex": 0,
+      "IsZero": false
+    },
+    {
+      "$type": "UAssetAPI.PropertyTypes.Objects.BytePropertyData, UAssetAPI",
+      "ByteType": "Byte",
+      "EnumType": "None",
+      "Value": 55,
+      "Name": "GraphSpeed",
+      "DuplicationIndex": 0,
+      "IsZero": false
+    },
+    {
+      "$type": "UAssetAPI.PropertyTypes.Objects.BytePropertyData, UAssetAPI",
+      "ByteType": "Byte",
+      "EnumType": "None",
+      "Value": 39,
+      "Name": "GraphMobirity",
+      "DuplicationIndex": 0,
+      "IsZero": false
+    },
+    {
+      "$type": "UAssetAPI.PropertyTypes.Objects.BytePropertyData, UAssetAPI",
+      "ByteType": "Byte",
+      "EnumType": "None",
+      "Value": 40,
+      "Name": "GraphStability",
+      "DuplicationIndex": 0,
+      "IsZero": false
+    },
+    {
+      "$type": "UAssetAPI.PropertyTypes.Objects.BytePropertyData, UAssetAPI",
+      "ByteType": "Byte",
+      "EnumType": "None",
+      "Value": 38,
+      "Name": "GraphDefense",
+      "DuplicationIndex": 0,
+      "IsZero": false
+    },
+    {
+      "$type": "UAssetAPI.PropertyTypes.Objects.BytePropertyData, UAssetAPI",
+      "ByteType": "Byte",
+      "EnumType": "None",
+      "Value": 36,
+      "Name": "PartsSlotBody",
+      "DuplicationIndex": 0,
+      "IsZero": false
+    },
+    {
+      "$type": "UAssetAPI.PropertyTypes.Objects.BytePropertyData, UAssetAPI",
+      "ByteType": "Byte",
+      "EnumType": "None",
+      "Value": 36,
+      "Name": "PartsSlotArms",
+      "DuplicationIndex": 0,
+      "IsZero": false
+    },
+    {
+      "$type": "UAssetAPI.PropertyTypes.Objects.BytePropertyData, UAssetAPI",
+      "ByteType": "Byte",
+      "EnumType": "None",
+      "Value": 36,
+      "Name": "PartsSlotMisc",
+      "DuplicationIndex": 0,
+      "IsZero": false
+    },
+    {
+      "$type": "UAssetAPI.PropertyTypes.Objects.BytePropertyData, UAssetAPI",
+      "ByteType": "Byte",
+      "EnumType": "None",
+      "Value": 1,
+      "Name": "StealthLevel",
+      "DuplicationIndex": 0,
+      "IsZero": false
+    },
+    {
+      "$type": "UAssetAPI.PropertyTypes.Objects.BytePropertyData, UAssetAPI",
+      "ByteType": "Byte",
+      "EnumType": "None",
+      "Value": 107,
+      "Name": "MaxHealth",
+      "DuplicationIndex": 0,
+      "IsZero": false
+    },
+    {
+      "$type": "UAssetAPI.PropertyTypes.Objects.IntPropertyData, UAssetAPI",
+      "Name": "AircraftCost",
+      "DuplicationIndex": 0,
+      "IsZero": false,
+      "Value": 1750
+    },
+    {
+      "$type": "UAssetAPI.PropertyTypes.Objects.FloatPropertyData, UAssetAPI",
+      "Value": 2.0,
+      "Name": "CanopyEffectChangeDuration_MP",
+      "DuplicationIndex": 0,
+      "IsZero": false
+    },
+    {
+      "$type": "UAssetAPI.PropertyTypes.Objects.FloatPropertyData, UAssetAPI",
+      "Value": 2.0,
+      "Name": "CanopyIceAppearDuration_MP",
+      "DuplicationIndex": 0,
+      "IsZero": false
+    },
+    {
+      "$type": "UAssetAPI.PropertyTypes.Objects.FloatPropertyData, UAssetAPI",
+      "Value": 2.0,
+      "Name": "CanopyIceChangeDuration_MP",
+      "DuplicationIndex": 0,
+      "IsZero": false
+    },
+    {
+      "$type": "UAssetAPI.PropertyTypes.Objects.FloatPropertyData, UAssetAPI",
+      "Value": 1.0,
+      "Name": "CanopyEffectDecayMultiplier_MP",
+      "DuplicationIndex": 0,
+      "IsZero": false
+    },
+    {
+      "$type": "UAssetAPI.PropertyTypes.Objects.FloatPropertyData, UAssetAPI",
+      "Value": 0.30000001192092896,
+      "Name": "IceTriggerCloudDensity_MP",
+      "DuplicationIndex": 0,
+      "IsZero": false
+    },
+    {
+      "$type": "UAssetAPI.PropertyTypes.Objects.FloatPropertyData, UAssetAPI",
+      "Value": 1.0,
+      "Name": "AirCurrentPositionInfluenceModifier_MP",
+      "DuplicationIndex": 0,
+      "IsZero": false
+    },
+    {
+      "$type": "UAssetAPI.PropertyTypes.Objects.FloatPropertyData, UAssetAPI",
+      "Value": 1.0,
+      "Name": "AirCurrentRotationInfluenceModifier_MP",
+      "DuplicationIndex": 0,
+      "IsZero": false
+    },
+    {
+      "$type": "UAssetAPI.PropertyTypes.Objects.FloatPropertyData, UAssetAPI",
+      "Value": 30.0,
+      "Name": "InAirCurrentMovementDegradePercent_MP",
+      "DuplicationIndex": 0,
+      "IsZero": false
+    },
+    {
+      "$type": "UAssetAPI.PropertyTypes.Objects.FloatPropertyData, UAssetAPI",
+      "Value": 100.0,
+      "Name": "AirCurrentStrengthThreshold_MP",
+      "DuplicationIndex": 0,
+      "IsZero": false
+    },
+    {
+      "$type": "UAssetAPI.PropertyTypes.Objects.FloatPropertyData, UAssetAPI",
+      "Value": 30.0,
+      "Name": "InCloudMovementDegradePercent_MP",
+      "DuplicationIndex": 0,
+      "IsZero": false
+    },
+    {
+      "$type": "UAssetAPI.PropertyTypes.Objects.FloatPropertyData, UAssetAPI",
+      "Value": 1.0,
+      "Name": "InCloudMovementDegradeDuration_MP",
+      "DuplicationIndex": 0,
+      "IsZero": false
+    },
+    {
+      "$type": "UAssetAPI.PropertyTypes.Objects.FloatPropertyData, UAssetAPI",
+      "Value": 480.0,
+      "Name": "InCloudStallSpeed_MP",
+      "DuplicationIndex": 0,
+      "IsZero": false
+    },
+    {
+      "$type": "UAssetAPI.PropertyTypes.Objects.FloatPropertyData, UAssetAPI",
+      "Value": 560.0,
+      "Name": "InCloudBuffetSpeed_MP",
+      "DuplicationIndex": 0,
+      "IsZero": false
+    },
+    {
+      "$type": "UAssetAPI.PropertyTypes.Objects.FloatPropertyData, UAssetAPI",
+      "Value": 0.15000000596046448,
+      "Name": "CloudEnterDensity_MP",
+      "DuplicationIndex": 0,
+      "IsZero": false
+    },
+    {
+      "$type": "UAssetAPI.PropertyTypes.Objects.FloatPropertyData, UAssetAPI",
+      "Value": 0.10000000149011612,
+      "Name": "CloudExitDensity_MP",
+      "DuplicationIndex": 0,
+      "IsZero": false
+    },
+    {
+      "$type": "UAssetAPI.PropertyTypes.Structs.StructPropertyData, UAssetAPI",
+      "StructType": "SoftObjectPath",
+      "SerializeNone": true,
+      "StructGUID": "{00000000-0000-0000-0000-000000000000}",
+      "Name": "RefPlaneImagePortrait",
+      "DuplicationIndex": 0,
+      "IsZero": false,
+      "Value": [
+        {
+          "$type": "UAssetAPI.PropertyTypes.Structs.SoftObjectPathPropertyData, UAssetAPI",
+          "Path": null,
+          "Name": "RefPlaneImagePortrait",
+          "DuplicationIndex": 0,
+          "IsZero": false,
+          "Value": {
+            "$type": "UAssetAPI.PropertyTypes.Objects.FSoftObjectPath, UAssetAPI",
+            "AssetPath": {
+              "$type": "UAssetAPI.PropertyTypes.Objects.FTopLevelAssetPath, UAssetAPI",
+              "PackageName": null,
+              "AssetName": "/Game/UI/Menu/Multi/Assets/MultiAircraftImage/Multi_Aircraft_4.Multi_Aircraft_4"
+            },
+            "SubPathString": null
+          }
+        }
+      ]
+    },
+    {
+      "$type": "UAssetAPI.PropertyTypes.Structs.StructPropertyData, UAssetAPI",
+      "StructType": "SoftObjectPath",
+      "SerializeNone": true,
+      "StructGUID": "{00000000-0000-0000-0000-000000000000}",
+      "Name": "RefPlaneImageLandscape",
+      "DuplicationIndex": 0,
+      "IsZero": false,
+      "Value": [
+        {
+          "$type": "UAssetAPI.PropertyTypes.Structs.SoftObjectPathPropertyData, UAssetAPI",
+          "Path": null,
+          "Name": "RefPlaneImageLandscape",
+          "DuplicationIndex": 0,
+          "IsZero": false,
+          "Value": {
+            "$type": "UAssetAPI.PropertyTypes.Objects.FSoftObjectPath, UAssetAPI",
+            "AssetPath": {
+              "$type": "UAssetAPI.PropertyTypes.Objects.FTopLevelAssetPath, UAssetAPI",
+              "PackageName": null,
+              "AssetName": "/Game/UI/Menu/Multi/Assets/Loading/Multi_Loading_4.Multi_Loading_4"
+            },
+            "SubPathString": null
+          }
+        }
+      ]
+    },
+    {
+      "$type": "UAssetAPI.PropertyTypes.Objects.FloatPropertyData, UAssetAPI",
+      "Value": 1.0,
+      "Name": "BeginAerialRefuelling",
+      "DuplicationIndex": 0,
+      "IsZero": false
+    },
+    {
+      "$type": "UAssetAPI.PropertyTypes.Objects.FloatPropertyData, UAssetAPI",
+      "Value": 1.0,
+      "Name": "BeginAerialRefuelling",
+      "DuplicationIndex": 1,
+      "IsZero": false
+    },
+    {
+      "$type": "UAssetAPI.PropertyTypes.Objects.FloatPropertyData, UAssetAPI",
+      "Value": 1.0,
+      "Name": "BeginAerialRefuelling",
+      "DuplicationIndex": 2,
+      "IsZero": false
+    },
+    {
+      "$type": "UAssetAPI.PropertyTypes.Objects.FloatPropertyData, UAssetAPI",
+      "Value": 1.0,
+      "Name": "BeginLanding",
+      "DuplicationIndex": 0,
+      "IsZero": false
+    },
+    {
+      "$type": "UAssetAPI.PropertyTypes.Objects.FloatPropertyData, UAssetAPI",
+      "Value": 1.0,
+      "Name": "BeginLanding",
+      "DuplicationIndex": 1,
+      "IsZero": false
+    },
+    {
+      "$type": "UAssetAPI.PropertyTypes.Objects.FloatPropertyData, UAssetAPI",
+      "Value": 1.0,
+      "Name": "BeginLanding",
+      "DuplicationIndex": 2,
+      "IsZero": false
+    },
+    {
+      "$type": "UAssetAPI.PropertyTypes.Objects.FloatPropertyData, UAssetAPI",
+      "Value": 1.0,
+      "Name": "BeginTakeoffA",
+      "DuplicationIndex": 0,
+      "IsZero": false
+    },
+    {
+      "$type": "UAssetAPI.PropertyTypes.Objects.FloatPropertyData, UAssetAPI",
+      "Value": 1.0,
+      "Name": "BeginTakeoffA",
+      "DuplicationIndex": 1,
+      "IsZero": false
+    },
+    {
+      "$type": "UAssetAPI.PropertyTypes.Objects.FloatPropertyData, UAssetAPI",
+      "Value": 1.0,
+      "Name": "BeginTakeoffA",
+      "DuplicationIndex": 2,
+      "IsZero": false
+    },
+    {
+      "$type": "UAssetAPI.PropertyTypes.Objects.FloatPropertyData, UAssetAPI",
+      "Value": 1.0,
+      "Name": "BeginTakeoffB",
+      "DuplicationIndex": 0,
+      "IsZero": false
+    },
+    {
+      "$type": "UAssetAPI.PropertyTypes.Objects.FloatPropertyData, UAssetAPI",
+      "Value": 1.0,
+      "Name": "BeginTakeoffB",
+      "DuplicationIndex": 1,
+      "IsZero": false
+    },
+    {
+      "$type": "UAssetAPI.PropertyTypes.Objects.FloatPropertyData, UAssetAPI",
+      "Value": 0.8500000238418579,
+      "Name": "BeginTakeoffB",
+      "DuplicationIndex": 2,
+      "IsZero": false
+    },
+    {
+      "$type": "UAssetAPI.PropertyTypes.Objects.FloatPropertyData, UAssetAPI",
+      "Value": 1.0,
+      "Name": "BeginTakeoffC",
+      "DuplicationIndex": 0,
+      "IsZero": false
+    },
+    {
+      "$type": "UAssetAPI.PropertyTypes.Objects.FloatPropertyData, UAssetAPI",
+      "Value": 1.0,
+      "Name": "BeginTakeoffC",
+      "DuplicationIndex": 1,
+      "IsZero": false
+    },
+    {
+      "$type": "UAssetAPI.PropertyTypes.Objects.FloatPropertyData, UAssetAPI",
+      "Value": 1.0,
+      "Name": "BeginTakeoffC",
+      "DuplicationIndex": 2,
+      "IsZero": false
+    },
+    {
+      "$type": "UAssetAPI.PropertyTypes.Objects.FloatPropertyData, UAssetAPI",
+      "Value": 1.0,
+      "Name": "BeginTakeoffNavyA",
+      "DuplicationIndex": 0,
+      "IsZero": false
+    },
+    {
+      "$type": "UAssetAPI.PropertyTypes.Objects.FloatPropertyData, UAssetAPI",
+      "Value": 1.0,
+      "Name": "BeginTakeoffNavyA",
+      "DuplicationIndex": 1,
+      "IsZero": false
+    },
+    {
+      "$type": "UAssetAPI.PropertyTypes.Objects.FloatPropertyData, UAssetAPI",
+      "Value": 1.0,
+      "Name": "BeginTakeoffNavyA",
+      "DuplicationIndex": 2,
+      "IsZero": false
+    },
+    {
+      "$type": "UAssetAPI.PropertyTypes.Objects.FloatPropertyData, UAssetAPI",
+      "Value": 1.0,
+      "Name": "BeginTakeoffNavyB",
+      "DuplicationIndex": 0,
+      "IsZero": false
+    },
+    {
+      "$type": "UAssetAPI.PropertyTypes.Objects.FloatPropertyData, UAssetAPI",
+      "Value": 1.0,
+      "Name": "BeginTakeoffNavyB",
+      "DuplicationIndex": 1,
+      "IsZero": false
+    },
+    {
+      "$type": "UAssetAPI.PropertyTypes.Objects.FloatPropertyData, UAssetAPI",
+      "Value": 0.8500000238418579,
+      "Name": "BeginTakeoffNavyB",
+      "DuplicationIndex": 2,
+      "IsZero": false
+    },
+    {
+      "$type": "UAssetAPI.PropertyTypes.Objects.FloatPropertyData, UAssetAPI",
+      "Value": 1.0,
+      "Name": "BeginTakeoffNavyC",
+      "DuplicationIndex": 0,
+      "IsZero": false
+    },
+    {
+      "$type": "UAssetAPI.PropertyTypes.Objects.FloatPropertyData, UAssetAPI",
+      "Value": 1.0,
+      "Name": "BeginTakeoffNavyC",
+      "DuplicationIndex": 1,
+      "IsZero": false
+    },
+    {
+      "$type": "UAssetAPI.PropertyTypes.Objects.FloatPropertyData, UAssetAPI",
+      "Value": 1.0,
+      "Name": "BeginTakeoffNavyC",
+      "DuplicationIndex": 2,
+      "IsZero": false
+    },
+    {
+      "$type": "UAssetAPI.PropertyTypes.Objects.FloatPropertyData, UAssetAPI",
+      "Value": 1.0,
+      "Name": "EndAerialRefuelling",
+      "DuplicationIndex": 0,
+      "IsZero": false
+    },
+    {
+      "$type": "UAssetAPI.PropertyTypes.Objects.FloatPropertyData, UAssetAPI",
+      "Value": 1.0,
+      "Name": "EndAerialRefuelling",
+      "DuplicationIndex": 1,
+      "IsZero": false
+    },
+    {
+      "$type": "UAssetAPI.PropertyTypes.Objects.FloatPropertyData, UAssetAPI",
+      "Value": 1.0,
+      "Name": "EndAerialRefuelling",
+      "DuplicationIndex": 2,
+      "IsZero": false
+    },
+    {
+      "$type": "UAssetAPI.PropertyTypes.Objects.FloatPropertyData, UAssetAPI",
+      "Value": 1.0,
+      "Name": "EndTakeOff",
+      "DuplicationIndex": 0,
+      "IsZero": false
+    },
+    {
+      "$type": "UAssetAPI.PropertyTypes.Objects.FloatPropertyData, UAssetAPI",
+      "Value": 1.0,
+      "Name": "EndTakeOff",
+      "DuplicationIndex": 1,
+      "IsZero": false
+    },
+    {
+      "$type": "UAssetAPI.PropertyTypes.Objects.FloatPropertyData, UAssetAPI",
+      "Value": 1.0,
+      "Name": "EndTakeOff",
+      "DuplicationIndex": 2,
+      "IsZero": false
+    },
+    {
+      "$type": "UAssetAPI.PropertyTypes.Objects.FloatPropertyData, UAssetAPI",
+      "Value": 0.8999999761581421,
+      "Name": "WeaponChange",
+      "DuplicationIndex": 0,
+      "IsZero": false
+    },
+    {
+      "$type": "UAssetAPI.PropertyTypes.Objects.FloatPropertyData, UAssetAPI",
+      "Value": 0.8999999761581421,
+      "Name": "WeaponChange",
+      "DuplicationIndex": 1,
+      "IsZero": false
+    },
+    {
+      "$type": "UAssetAPI.PropertyTypes.Objects.FloatPropertyData, UAssetAPI",
+      "Value": 0.8999999761581421,
+      "Name": "WeaponChange",
+      "DuplicationIndex": 2,
+      "IsZero": false
+    },
+    {
+      "$type": "UAssetAPI.PropertyTypes.Objects.BoolPropertyData, UAssetAPI",
+      "Name": "IsUnlockAircraftTree",
+      "DuplicationIndex": 0,
+      "IsZero": false,
+      "Value": true
+    },
+    {
+      "$type": "UAssetAPI.PropertyTypes.Objects.StrPropertyData, UAssetAPI",
+      "Name": "DLCID",
+      "DuplicationIndex": 0,
+      "IsZero": false,
+      "Value": "Patch"
+    }
+  ]
+}

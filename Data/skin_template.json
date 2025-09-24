@@ -1,0 +1,74 @@
+{
+  "$type": "UAssetAPI.PropertyTypes.Structs.StructPropertyData, UAssetAPI",
+  "StructType": "SkinDataTable",
+  "SerializeNone": true,
+  "StructGUID": "{00000000-0000-0000-0000-000000000000}",
+  "Name": "Row_XXX",
+  "DuplicationIndex": 0,
+  "IsZero": false,
+  "Value": [
+    {
+      "$type": "UAssetAPI.PropertyTypes.Objects.IntPropertyData, UAssetAPI",
+      "Name": "SkinID",
+      "DuplicationIndex": 0,
+      "IsZero": false,
+      "Value": 0
+    },
+    {
+      "$type": "UAssetAPI.PropertyTypes.Objects.StrPropertyData, UAssetAPI",
+      "Name": "PlaneStringID",
+      "DuplicationIndex": 0,
+      "IsZero": false,
+      "Value": ""
+    },
+    {
+      "$type": "UAssetAPI.PropertyTypes.Objects.IntPropertyData, UAssetAPI",
+      "Name": "SkinNo",
+      "DuplicationIndex": 0,
+      "IsZero": false,
+      "Value": 0
+    },
+    {
+      "$type": "UAssetAPI.PropertyTypes.Objects.IntPropertyData, UAssetAPI",
+      "Name": "SortNumber",
+      "DuplicationIndex": 0,
+      "IsZero": false,
+      "Value": 0
+    },
+    {
+      "$type": "UAssetAPI.PropertyTypes.Objects.BoolPropertyData, UAssetAPI",
+      "Name": "bNoseEmblem",
+      "DuplicationIndex": 0,
+      "IsZero": false,
+      "Value": false
+    },
+    {
+      "$type": "UAssetAPI.PropertyTypes.Objects.BoolPropertyData, UAssetAPI",
+      "Name": "bWingEmblem",
+      "DuplicationIndex": 0,
+      "IsZero": false,
+      "Value": false
+    },
+    {
+      "$type": "UAssetAPI.PropertyTypes.Objects.BoolPropertyData, UAssetAPI",
+      "Name": "bTailEmblem",
+      "DuplicationIndex": 0,
+      "IsZero": false,
+      "Value": false
+    },
+    {
+      "$type": "UAssetAPI.PropertyTypes.Objects.StrPropertyData, UAssetAPI",
+      "Name": "PlaneReference",
+      "DuplicationIndex": 0,
+      "IsZero": false,
+      "Value": ""
+    },
+    {
+      "$type": "UAssetAPI.PropertyTypes.Objects.StrPropertyData, UAssetAPI",
+      "Name": "DLCID",
+      "DuplicationIndex": 0,
+      "IsZero": false,
+      "Value": "Patch"
+    }
+  ]
+}
