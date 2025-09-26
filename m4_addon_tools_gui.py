@@ -922,6 +922,7 @@ class MainWindow(QtWidgets.QWidget):
             stats_grid.addWidget(lbl, i // 2, (i % 2) * 2)
             stats_grid.addWidget(le, i // 2, (i % 2) * 2 + 1)
 
+        
         stats_scroll = QtWidgets.QScrollArea()
         stats_scroll.setWidgetResizable(True)
         stats_scroll.setWidget(stats_group)
@@ -935,6 +936,8 @@ class MainWindow(QtWidgets.QWidget):
         pp_layout.addLayout(hex_and_stats)
 
         self.tabs.addTab(pp_tab, "PlayerPlaneDataTable")
+
+        pp_layout.addWidget(QtWidgets.QLabel("Note: GraphXXX stats determine the stats' visual representation in the hangar view's stats graph. Functional stats are managed by the plane's PlayerPlaneConfig file."))
 
         # -------------------
         # Skin tab
