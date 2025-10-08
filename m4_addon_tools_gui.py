@@ -228,6 +228,12 @@ def add_or_edit_player_plane(input_json_path, data_dir, exe_dir, ui_values, mode
         # Name will be adjusted properly; PlaneID set below
         new_element["Name"] = f"Row_{new_plane_id or 9999}"
         data_array.append(new_element)
+        # # --- Replace default hangar and IGC sizes if adding a new plane ---
+        # for prop in new_element.get("Value", []):
+        #     if prop.get("Name") == "HangarSize" and prop.get("Value") == "EPlaneHangarSize::PHS_Medium":
+        #         prop["Value"] = "EPlaneHangarSize::PHS_Giant"
+        #     elif prop.get("Name") == "IGCSize" and prop.get("Value") == "EPlaneIGCSize::PIS_Medium":
+        #         prop["Value"] = "EPlaneIGCSize::PIS_Giant"
 
     def f18f_default(name):
         if f18f_template:
@@ -267,6 +273,16 @@ def add_or_edit_player_plane(input_json_path, data_dir, exe_dir, ui_values, mode
             prop["Value"] = ui_values.get("spweapon2", "")
         elif name == "SpWeaponID3":
             prop["Value"] = ui_values.get("spweapon3", "")
+        elif name == "HangarSize":
+            # Always set from UI in add or edit mode
+            selected_hangar = ui_values.get("hangar_size")
+            if selected_hangar:
+                prop["Value"] = selected_hangar
+        
+        elif name == "IGCSize":
+            selected_igc = ui_values.get("igc_size")
+            if selected_igc:
+                prop["Value"] = selected_igc
         elif name == "Reference":
             # Update the Reference nested structure so AssetName points at the plane_string_id
             existing_val = prop.get("Value")
@@ -303,14 +319,13 @@ def add_or_edit_player_plane(input_json_path, data_dir, exe_dir, ui_values, mode
             all_ids.append(pid)
     all_ids = sorted(set(all_ids))
 
-    # Compute alphabetical index for this plane
-    alpha_index = all_ids.index(plane_string_id)
+    # Compute alphabetical index for this plane, starting from 200
+    alpha_index = 200 + all_ids.index(plane_string_id)
 
     for prop in new_element.get("Value", []):
         if prop.get("Name") == "AlphabeticalSortNumber":
             prop["Value"] = alpha_index
         elif prop.get("Name") == "SortNumber":
-            # Usually matches alpha_index, but if your JSON uses a base offset you can add it here
             prop["Value"] = alpha_index
 
 
@@ -807,11 +822,17 @@ class HexagonGraph(QtWidgets.QWidget):
 class MainWindow(QtWidgets.QWidget):
     def __init__(self):
         super().__init__()
-        main = QtWidgets.QVBoxLayout(self)
+        # main = QtWidgets.QVBoxLayout(self)
+        main_layout = QtWidgets.QHBoxLayout(self)
+        left_panel = QtWidgets.QVBoxLayout()
+        main_layout.addLayout(left_panel, 6)
+        right_panel = QtWidgets.QVBoxLayout()
+        main_layout.addLayout(right_panel, 4)
+
 
         # --- Data / input selectors ---
         files_row = QtWidgets.QHBoxLayout()
-        main.addLayout(files_row)
+        left_panel.addLayout(files_row)
         files_row.addWidget(QtWidgets.QLabel("Data folder:"))
         self.data_dir_edit = QtWidgets.QLineEdit(DEFAULT_DATA_DIR)
         files_row.addWidget(self.data_dir_edit)
@@ -821,7 +842,7 @@ class MainWindow(QtWidgets.QWidget):
 
         # per-file overrides
         file_over_row = QtWidgets.QHBoxLayout()
-        main.addLayout(file_over_row)
+        left_panel.addLayout(file_over_row)
         self.pp_input_edit = QtWidgets.QLineEdit(str(resolve_input_file("PlayerPlaneDataTable",self.data_dir_edit.text())))
         file_over_row.addWidget(QtWidgets.QLabel("PlayerPlaneDataTable input:"))
         file_over_row.addWidget(self.pp_input_edit)
@@ -837,7 +858,7 @@ class MainWindow(QtWidgets.QWidget):
         file_over_row.addWidget(btn_skin)
 
         av_row = QtWidgets.QHBoxLayout()
-        main.addLayout(av_row)
+        left_panel.addLayout(av_row)
         self.av_input_edit = QtWidgets.QLineEdit(str(resolve_input_file("AircraftViewerDataTable",self.data_dir_edit.text())))
         av_row.addWidget(QtWidgets.QLabel("AircraftViewerDataTable input:"))
         av_row.addWidget(self.av_input_edit)
@@ -854,7 +875,7 @@ class MainWindow(QtWidgets.QWidget):
         self.edit_radio = QtWidgets.QRadioButton("Edit existing plane")
         mode_row.addWidget(self.add_radio)
         mode_row.addWidget(self.edit_radio)
-        main.addLayout(mode_row)
+        left_panel.addLayout(mode_row)
 
         self.mode_group = QtWidgets.QButtonGroup(self)
         self.mode_group.addButton(self.add_radio)
@@ -865,7 +886,7 @@ class MainWindow(QtWidgets.QWidget):
         self.existing_combo = QtWidgets.QComboBox()
         select_row.addWidget(self.existing_label)
         select_row.addWidget(self.existing_combo)
-        main.addLayout(select_row)
+        left_panel.addLayout(select_row)
 
         # start in Add mode: hide selector
         self.existing_label.hide()
@@ -875,7 +896,7 @@ class MainWindow(QtWidgets.QWidget):
         # Tabs
         # -------------------
         self.tabs = QtWidgets.QTabWidget()
-        main.addWidget(self.tabs)
+        left_panel.addWidget(self.tabs)
 
         # -------------------
         # PlayerPlane tab
@@ -908,6 +929,45 @@ class MainWindow(QtWidgets.QWidget):
         form.addRow(QtWidgets.QLabel("SpWeaponID2:"), self.sp2)
         form.addRow(QtWidgets.QLabel("SpWeaponID3:"), self.sp3)
 
+        # --- Hangar & IGC Size selection ---
+        hangar_label = QtWidgets.QLabel("Hangar View Size:")
+        self.hangar_combo = QtWidgets.QComboBox()
+        self.hangar_combo.addItems([
+            "EPlaneHangarSize::PHS_Giant",
+            "EPlaneHangarSize::PHS_Large",
+            "EPlaneHangarSize::PHS_Medium",
+            "EPlaneHangarSize::PHS_Small",
+            "EPlaneHangarSize::PHS_Extra",
+            "EPlaneHangarSize::PHS_ASFX",
+            "EPlaneHangarSize::PHS_Dark",
+            "EPlaneHangarSize::PHS_F15_X",
+            "EPlaneHangarSize::PHS_FA27",
+            "EPlaneHangarSize::PHS_FA44",
+            "EPlaneHangarSize::PHS_Mig31B",
+            "EPlaneHangarSize::PHS_SU30_X",
+        ])
+
+        igc_label = QtWidgets.QLabel("IGC Camera Size:")
+        self.igc_combo = QtWidgets.QComboBox()
+        self.igc_combo.addItems([
+            "EPlaneIGCSize::PIS_Giant",
+            "EPlaneIGCSize::PIS_Large",
+            "EPlaneIGCSize::PIS_Medium",
+            "EPlaneIGCSize::PIS_Small",
+            "EPlaneIGCSize::PIS_Special",
+            "EPlaneIGCSize::PIS_ASFX",
+            "EPlaneIGCSize::PIS_Dark",
+            "EPlaneIGCSize::PIS_FA27",
+            "EPlaneIGCSize::PIS_FA44",
+        ])
+
+        hangar_igc_layout = QtWidgets.QHBoxLayout()
+        hangar_igc_layout.addWidget(hangar_label)
+        hangar_igc_layout.addWidget(self.hangar_combo)
+        hangar_igc_layout.addWidget(igc_label)
+        hangar_igc_layout.addWidget(self.igc_combo)
+        form.addRow(hangar_igc_layout)
+
         pp_layout.addLayout(form)
 
         # Stats group
@@ -937,7 +997,13 @@ class MainWindow(QtWidgets.QWidget):
 
         self.tabs.addTab(pp_tab, "PlayerPlaneDataTable")
 
-        pp_layout.addWidget(QtWidgets.QLabel("Note: GraphXXX stats determine the stats' visual representation in the hangar view's stats graph. Functional stats are managed by the plane's PlayerPlaneConfig file."))
+        graph_note = QtWidgets.QLabel("Note: GraphXXX stats determine the stats' visual representation in the hangar view's stats graph. Functional stats are managed by the plane's PlayerPlaneConfig file.")
+        graph_note.setFixedHeight(24)
+        pp_layout.addWidget(graph_note)
+
+        empty_label = QtWidgets.QLabel("")
+        empty_label.setMinimumHeight(0)
+        pp_layout.addWidget(empty_label)
 
         # -------------------
         # Skin tab
@@ -967,12 +1033,12 @@ class MainWindow(QtWidgets.QWidget):
         # Log & Run
         self.log = QtWidgets.QTextEdit()
         self.log.setReadOnly(True)
-        self.log.setFixedHeight(180)
-        main.addWidget(self.log)
+        # self.log.setFixedHeight(180)
+        right_panel.addWidget(self.log)
 
         self.run_btn = QtWidgets.QPushButton("Run pipeline")
-        self.run_btn.setFixedHeight(48)
-        main.addWidget(self.run_btn)
+        self.run_btn.setFixedHeight(140)
+        right_panel.addWidget(self.run_btn)
 
         # Signals
         self.run_btn.clicked.connect(self.start_pipeline)
@@ -982,13 +1048,14 @@ class MainWindow(QtWidgets.QWidget):
         self.try_fill_placeholders()
 
         self.loaded_plane_id = None
-        self.setLayout(main)
+        self.setLayout(main_layout)
         self.setWindowTitle("M4AddonToolsGUI")
         try:
             self.setWindowIcon(QIcon(DEFAULT_DATA_DIR+"/gui.ico"))
         except Exception:
             pass
-        self.resize(1020, 820)
+        self.resize(1300, 768)
+        self.setMinimumSize(1200, 768)
 
         # initialize placeholders (if defaults exist)
         self.try_fill_placeholders()
@@ -1003,7 +1070,7 @@ class MainWindow(QtWidgets.QWidget):
                 le = self.stat_edits[fname]
                 le.editingFinished.connect(partial(self.on_stat_edit_changed, fname))
 
-        self.setLayout(main)
+        self.setLayout(main_layout)
 
     # -------------------------
     # UI helpers
@@ -1195,6 +1262,25 @@ class MainWindow(QtWidgets.QWidget):
                 else:
                     self.plane_id_edit.clear()
 
+            # --- Pre-select HangarSize and IGCSize dropdowns when editing ---
+            hangar_value = next(
+                (p.get("Value") for p in entry["Value"] if p.get("Name") == "HangarSize"),
+                None
+            )
+            if hangar_value:
+                idx = self.hangar_combo.findText(hangar_value)
+                if idx >= 0:
+                    self.hangar_combo.setCurrentIndex(idx)
+
+            igc_value = next(
+                (p.get("Value") for p in entry["Value"] if p.get("Name") == "IGCSize"),
+                None
+            )
+            if igc_value:
+                idx = self.igc_combo.findText(igc_value)
+                if idx >= 0:
+                    self.igc_combo.setCurrentIndex(idx)
+
             sdt_path = self.skin_input_edit.text().strip()
             if not sdt_path:
                 sdt_path = os.path.join(self.data_dir_edit.text() or DEFAULT_DATA_DIR, "SkinDataTable.json")
@@ -1283,6 +1369,8 @@ class MainWindow(QtWidgets.QWidget):
                 "spweapon1": self.sp1.text().strip(),
                 "spweapon2": self.sp2.text().strip(),
                 "spweapon3": self.sp3.text().strip(),
+                "hangar_size": self.hangar_combo.currentText(),
+                "igc_size": self.igc_combo.currentText(),
                 "stat_values": stat_values
             }
 
